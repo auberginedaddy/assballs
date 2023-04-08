@@ -1,0 +1,13 @@
+word = prompt('Word to scramble?')
+word = word.toUpperCase()
+note = text(word,CENTER,100,'mono')
+text('tap to scramble',384,100,CENTER)
+
+function tap() {
+  index = random(word.length) - 1
+  letter = word.charAt(index)
+  part1 = word.substring(0,index)
+  part2 = word.substring(index + 1)
+  word = letter + part1 + part2
+  note.change(word)
+}
